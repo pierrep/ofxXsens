@@ -19,10 +19,12 @@ and is intended for use only by Xsens Technologies BV and
 
 #define SERIAL_KEY_SIZE	24
 
+// Replace XXXX-XXXX-XXXX-XXXX-XXXX below with your serial key
+
 extern "C"
 int setSerialKey()
 {
-	if (strcmp(SERIAL_KEY, "K7Y7-EW4X-CLRJ-62DP-D8TX") == 0)
+	if (strcmp(SERIAL_KEY, "XXXX-XXXX-XXXX-XXXX-XXXX") == 0)
 	{
 		{
 			char serialKey[256];
