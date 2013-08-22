@@ -174,13 +174,15 @@ void ofxXsens::update() {
 
 void ofxXsens::close()
 {
-    // Close port
-    ofLogNotice("ofxXsens") << "Closing port..." << std::endl;
-    control->closePort(mtPort->portName().toStdString());
+    if(bSensorConnected) {
+        // Close port
+        ofLogNotice("ofxXsens") << "Closing port..." << std::endl;
+        control->closePort(mtPort->portName().toStdString());
 
-    // Free XsControl object
-    ofLogNotice("ofxXsens") << "Freeing XsControl object..." << std::endl;
-	control->destruct();
+        // Free XsControl object
+        ofLogNotice("ofxXsens") << "Freeing XsControl object..." << std::endl;
+        control->destruct();
+    }
 }
 
 double ofxXsens::getLatitude() {
